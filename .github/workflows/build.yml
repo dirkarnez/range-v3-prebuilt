@@ -109,6 +109,12 @@ jobs:
             cmake.exe -G"MinGW Makefiles" ^
             -DCMAKE_BUILD_TYPE=Release ^
             -DBUILD_SHARED_LIBS=OFF ^
+            -DRANGE_V3_TESTS=OFF ^
+            -DRANGE_V3_DOCS=OFF ^
+            -DRANGE_V3_EXAMPLES=OFF ^
+            -DRANGE_V3_PERF=OFF ^
+            -DRANGE_V3_HEADER_CHECKS=OFF ^
+            -DRANGE_V3_INSTALL=ON ^
             -DCMAKE_INSTALL_PREFIX="cmake-build/${{ env.cmakeInstallationPath }}" -B./cmake-build &&^
             cd cmake-build && ( cmake --build . --config Release && cmake --install .  || type .\CMakeFiles\CMakeError.log )  
  
